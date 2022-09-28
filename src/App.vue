@@ -1,7 +1,7 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <img alt="Vue logo" src="./assets/logo.svg">
+  <img alt="Vue logo" src="./assets/img/logo.svg">
   <Header />
 </template>
 
@@ -98,10 +98,17 @@ select {
   }
 }
 
+@font-face {
+  font-family: 'GothicA1';
+  src: local('GothicA1'),
+    url('~@/assets/fonts/GothicA1-Regular.ttf') format('ttf');
+  font-style: normal;
+}
+
 
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: GothicA1, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -110,6 +117,7 @@ select {
 
 .container {
   width: 1196px;
+  height: 100%;
   margin: 0 auto;
 }
 </style>
