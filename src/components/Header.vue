@@ -10,18 +10,14 @@
 <script>
     export default {
         name: 'welcome-information',
-        data() {
-            return {
-                message: 'Nik'
-            }
-        },
     };
 </script>
 
 <style scoped>
     .wrapper {
-        height: 100vh;
-        background: url('@/assets/img/header/background-header.png') ;
+        height: 100%;
+        background: url('@/assets/img/header/background-header.png');
+        color: #fff;
     }
 
     h1 {

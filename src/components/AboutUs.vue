@@ -1,0 +1,43 @@
+<template>
+    <div class="wrapper">
+        <div class="container d-flex flex-row">
+            <div class="about-us">
+                <h3 class="about-us_title">About us</h3>
+                <p class="about-us_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.</p>
+
+                <a class="btn btn-primary" href="#" role="button">Read more</a>
+                <a class="btn btn-outline-primary" href="#" role="button">Contact us</a>
+            </div>
+            <img src="@/assets/img/about-us/top5-frontend-frameworks.png" alt="Top 5 frontend frameworks">
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'about-us',
+    };
+</script>
+
+<style scoped>
+    .wrapper {
+        background: url('@/assets/img/about-us/background-about-us.png');
+        color: #000;
+        text-align: left;
+        padding: 90px 0;
+    }
+
+    .container {
+        gap: 40px;
+    }
+
+    .about-us_title {
+        margin-bottom: 16px;
+        font-size: 28px;
+    }
+
+    .about-us_text {
+        margin-bottom: 28px;
+        color: #808080;
+    }
+</style>

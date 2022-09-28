@@ -1,20 +1,34 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <img alt="Vue logo" src="./assets/img/logo.svg">
+  <Navigation />
   <Header />
+  <AboutUs />
+  <Frameworks />
+  <Faq />
+  <Applications />
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
 import Header from '@/components/Header.vue';
+import Navigation from '@/components/Navigation.vue';
+import AboutUs from '@/components/AboutUs.vue';
+import Frameworks from '@/components/Frameworks.vue';
+import Faq from '@/components/Faq.vue';
+import Applications from '@/components/Applications.vue';
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    Header
-  }
+    Header,
+    Navigation,
+    AboutUs,
+    Frameworks,
+    Faq,
+    Applications,
+  },
 }
 </script>
 
@@ -52,10 +66,7 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 26px;
+  
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -108,6 +119,12 @@ select {
 
 
 #app {
+  height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 26px;
+  background-color: #F5F7FA;
+  /* height: 100%;        */
   font-family: GothicA1, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
