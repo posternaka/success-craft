@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div id="about" class="wrapper">
         <div class="container d-flex flex-row">
             <div class="about-us d-flex flex-column justify-content-between">
                 <div>

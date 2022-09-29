@@ -2,24 +2,24 @@
     <div class="navigation">
         <nav class="navbar fixed-top bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#home">
                     <img src="../assets/img/logo.svg" alt="Company's logo">
                 </a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                        <a class="nav-link active" aria-current="page" href="#home">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT US</a>
+                        <a class="nav-link" href="#about">ABOUT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FRAMEWORKS</a>
+                        <a class="nav-link" href="#frameworks">FRAMEWORKS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">APPLICATIONS</a>
+                        <a class="nav-link" href="#applications">APPLICATIONS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
+                        <a class="nav-link" href="#contact">CONTACT US</a>
                     </li>
                 </ul>
             </div>

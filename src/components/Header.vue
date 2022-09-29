@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div id="#home" class="wrapper">
         <div class="container d-flex flex-column justify-content-center align-items-center">
             <h1>Welcome to Test Page</h1>
             <p>Front-end developer</p>

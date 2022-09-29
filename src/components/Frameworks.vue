@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" >
+    <div id="frameworks" class="wrapper" >
         <div class="container">
             <h3 class="frameworks_title">Frameworks</h3>
             <div class="cards d-flex flex-row" v-for="framework in frameworks" :key="framework.id">

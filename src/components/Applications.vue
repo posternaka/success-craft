@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div id="applications" class="wrapper">
         <div class="container">
             <h3 class="title text-center">Applications</h3>
             <div class="applications_cards d-flex flex-row">
