@@ -15,7 +15,7 @@ import AboutUs from '@/components/AboutUs.vue';
 import Frameworks from '@/components/Frameworks.vue';
 import Faq from '@/components/Faq.vue';
 import Applications from '@/components/Applications.vue';
-import Footer from './components/Footer.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'App',
@@ -27,7 +27,7 @@ export default {
     Faq,
     Applications,
     Footer,
-},
+  },
 }
 </script>
 

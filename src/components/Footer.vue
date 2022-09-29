@@ -1,136 +1,155 @@
 <template>
-    <div class="wrapper">
+    <div id="contact" class="wrapper">
         <div class="container">
             <h3 class="title text-center">Contact Us</h3>
-            <form class="row g-3 text-left">
+            <form class="row g-3 text-left" @submit.prevent="checkForm">
                 <div class="col-md-3">
-                    <label for="validationServer01" class="form-label">First Name *</label>
+                    <label for="firstname">First Name *</label>
                     <input 
                         type="text" 
-                        placeholder="Enter your First name" 
+                        placeholder="Enter your Firstname" 
+                        id="firstname" 
                         class="form-control" 
-                        id="validationServer01" 
-                        v-model.trim="v$.form.firstname.$model" 
-                        :class="{'is-invalid':!v$.form.firstname.$errors, 'is-valid':!v$.form.firstname.$invalid}" 
+                        :class="v$.form.firstname.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.firstname"
                     >
+                    <div class="errors" v-if="v$.form.firstname.$dirty && !v$.form.firstname.required">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.firstname.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServer01" class="form-label">Last name *</label>
+                    <label for="lastname">Last name *</label>
                     <input 
                         type="text" 
-                        placeholder="Enter your Last name" 
+                        placeholder="Enter your Lastname" 
+                        id="lastname" 
                         class="form-control" 
-                        id="validationServer01" 
-                        v-model.trim="v$.form.lastname.$model" 
-                        :class="{'is-invalid':!v$.form.lastname.$errors, 'is-valid':!v$.form.lastname.$invalid}" 
-    
+                        :class="v$.form.lastname.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.lastname"
                     >
+                    <div class="errors" v-if="v$.form.lastname.$dirty && !v$.form.lastname.required">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.lastname.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServer01" class="form-label">Company *</label>
+                    <label for="company">Company *</label>
                     <input 
                         type="text" 
-                        placeholder="Enter your company" 
+                        placeholder="Enter your Company" 
+                        id="company" 
                         class="form-control" 
-                        id="validationServer01" 
-                        v-model.trim="v$.form.company.$model" 
-                        :class="{'is-invalid':!v$.form.company.$errors, 'is-valid':!v$.form.company.$invalid}"
+                        :class="v$.form.company.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.company"
                     >
+                    <div class="errors" v-if="v$.form.company.$dirty && !v$.form.company.required">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.company.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServerUsername" class="form-label">Email *</label>
-                    <div class="input-group has-validation">
+                    <label for="email">Email *</label>
                     <input 
                         type="text" 
+                        placeholder="Enter your Email" 
+                        id="email" 
                         class="form-control" 
-                        id="validationServerUsername" 
-                        placeholder="Enter Your Email" 
-                        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" 
-                        v-model.trim="v$.form.email.$model" 
-                        :class="{'is-invalid':!v$.form.email.$errors, 'is-valid':!v$.form.email.$invalid}"
+                        :class="v$.form.email.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.email"
                     >
+                    <div class="errors" v-if="v$.form.email.$dirty && !v$.form.email.email">
+                        <div class="error_msg">Required field</div>
                     </div>
                     <div class="errors" v-for="(error, index) of v$.form.email.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServer01" class="form-label">Job Title *</label>
+                    <label for="company">Job Title *</label>
                     <input 
                         type="text" 
-                        placeholder="Enter job title" 
-                        class="form-control" id="validationServer01" 
-                        v-model.trim="v$.form.job.$model"
-                        :class="{'is-invalid':!v$.form.job.$errors, 'is-valid':!v$.form.job.$invalid}"
+                        placeholder="Enter your Job Title" 
+                        id="job" 
+                        class="form-control" 
+                        :class="v$.form.job.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.job"
                     >
+                    <div class="errors" v-if="v$.form.job.$dirty && !v$.form.job.required">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.job.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServer01" class="form-label">Country *</label>
+                    <label for="company">Country *</label>
                     <input 
                         type="text" 
-                        placeholder="Enter Your Country" 
+                        placeholder="Enter your Country" 
+                        id="country" 
                         class="form-control" 
-                        id="validationServer01" 
-                        v-model.trim="v$.form.country.$model" 
-                        :class="{'is-invalid':!v$.form.country.$errors, 'is-valid':!v$.form.country.$invalid}"
+                        :class="v$.form.country.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.country"
                     >
+                    <div class="errors" v-if="v$.form.country.$dirty && !v$.form.country.required">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.country.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServer01" class="form-label">State *</label>
+                    <label for="company">State *</label>
                     <input 
                         type="text" 
                         placeholder="Enter your State" 
+                        id="state" 
                         class="form-control" 
-                        id="validationServer01" 
-                        v-model.trim="v$.form.state.$model" 
-                        :class="{'is-invalid':!v$.form.state.$errors, 'is-valid':!v$.form.state.$invalid}"
+                        :class="v$.form.state.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.state"
                     >
+                    <div class="errors" v-if="v$.form.state.$dirty && !v$.form.state.required">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.state.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
-                    <label for="validationServer05" class="form-label">Zip Code *</label>
+                    <label for="company">Zip Code *</label>
                     <input 
                         type="text" 
+                        placeholder="Enter your Zip Code" 
+                        id="zipCode" 
                         class="form-control" 
-                        id="validationServer05" 
-                        placeholder="Enter Your Zip Code" 
-                        aria-describedby="validationServer05Feedback" 
-                        v-model.trim="v$.form.zipCode.$model" 
-                        :class="{'is-invalid':!v$.form.zipCode.$errors, 'is-valid':!v$.form.zipCode.$invalid}"
+                        :class="v$.form.zipCode.$error ? 'is-invalid' : ''"
+                        v-model.trim="form.zipCode"
                     >
+                    <div class="errors" v-if="v$.form.zipCode.$dirty && !v$.form.zipCode.numeric">
+                        <div class="error_msg">Required field</div>
+                    </div>
                     <div class="errors" v-for="(error, index) of v$.form.zipCode.$errors" :key="index">
                         <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
 
-                <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                        Submit
-                    </button>
-                </div>
-
-                <div v-if="showModal" @close="showModal = false">Hello</div>
-
-                <button class="btn" @click="showModal=true">Show</button>
-                <div v-if="showModal" @close="showModal = false" name="Umesh">
-                    <p>dsfkdskf</p>
+                <div class="col-12 text-center page">
+                    <button class="btn btn-primary">Submit</button>
+                    <modal-window ref="modal"></modal-window>
                 </div>
                 
             </form>
@@ -143,25 +162,19 @@
 
 <script>
     import useVuelidate from '@vuelidate/core';
-    import { required, email, minLength, maxLength, numeric} from '@vuelidate/validators';
-
-
-    export function validText(name) {
-        let validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$");
-        if (validNamePattern.test(name)) {
-            return true;
-        }
-        return false;
-    }
+    import { required, email, numeric} from '@vuelidate/validators';
+    import ModalWindow from '@/components/modal-window.vue';
 
     export default {
         name: 'footer_block',
         setup () {
             return { v$: useVuelidate() }
         },
+        components: {
+            ModalWindow
+        },
         data() {
             return {
-                showModal: false,
                 form: {
                     firstname: '',
                     lastname: '',
@@ -178,58 +191,55 @@
             return {
             form: {
                 firstname: { 
-                    required, 
-                    name_validation: {
-                        $validator: validText,
-                        $message: 'Only letters'
-                    },
-                    min: minLength(3),
-                    max: maxLength(20),
+                    required,
                 },
                 lastname: { 
-                    required, 
-                    name_validation: {
-                        $validator: validText,
-                        $message: 'Only letters'
-                    },
-                    min: minLength(3),
-                    max: maxLength(20),
+                    required,
                 },
                 company: {
                     required, 
-                    min: minLength(3),
-                    max: maxLength(20),
                 },
                 email: { 
-                    required, 
                     email,
                 },
                 job: {
                     required, 
-                    min: minLength(3),
-                    max: maxLength(20),
                 },
                 country: {
                     required, 
-                    min: minLength(3),
-                    max: maxLength(20),
                 },
                 state: {
                     required,
-                    min: minLength(3),
-                    max: maxLength(20),
                 },
                 zipCode: {
-                    required,
                     numeric,
                 },
             },
             }
         },
+        methods: {
+            checkForm() {
+                this.v$.form.$touch()
+                if (!this.v$.form.$error) {
+                    return this.showModal()
+                }
+
+                return false
+            },
+
+            showModal() {
+                this.$refs.modal.show = true
+            }
+        }
     }
 </script>
 
 <style scoped>
+    .page {
+        position: relative;
+        overflow: hidden; 
+    }
+
     .container {
         padding-bottom: 59px;
     }
@@ -275,9 +285,5 @@
         input::placeholder {
             font-size: 0.8rem;
         }
-    }
-
-    @media (max-width: 768px) {
-        
     }
 </style>

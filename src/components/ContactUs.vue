@@ -1,129 +1,220 @@
-<template>
-  <div id="about" class="wrapper">
-    <form @submit.prevent="onSubmit">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for=""> First Name:</label><input class="form-control" placeholder="Enter first name" type="text" v-model="v$.form.firstName.$model">
-            <div class="pre-icon os-icon os-icon-user-male-circle"></div>
-            <!-- Error Message -->
-            <div class="input-errors" v-for="(error, index) of v$.form.firstName.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="">Last Name:</label><input class="form-control" placeholder="Enter last name" type="text" v-model="v$.form.lastName.$model">
-            <!-- Error Message -->
-            <div class="input-errors" v-for="(error, index) of v$.form.lastName.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Email Row -->
-      <div class="form-group">
-        <label for=""> Email address</label><input class="form-control" placeholder="Enter email" type="email" v-model="v$.form.email.$model">
-        <div class="pre-icon os-icon os-icon-email-2-at2"></div>
-        <!-- Error Message -->
-          <div class="input-errors" v-for="(error, index) of v$.form.email.$errors" :key="index">
-            <div class="error-msg">{{ error.$message }}</div>
-          </div>
-      </div>
-
-
-      <!-- Password and Confirm Password Row -->
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for=""> Password</label><input class="form-control" placeholder="Password" type="password" v-model="v$.form.password.$model">
-            <div class="pre-icon os-icon os-icon-fingerprint"></div>
-            <!-- Error Message -->
-            <div class="input-errors" v-for="(error, index) of v$.form.password.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="">Confirm Password</label><input @input="checkPassword()" class="form-control" placeholder="Confirm Password" type="password" v-model="v$.form.confirmPassword.$model">
-            <!-- Error Message -->
-            <div class="input-errors" v-for="(error, index) of v$.form.confirmPassword.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="buttons-w">
-        <button class="btn btn-primary" :disabled="v$.form.$invalid" style="margin-left:120px">Signup</button>
-      </div>
-    </form>
-  </div>
+<!-- <template>
+  <form class="sign-up" @submit.prevent="checkForm">
+    <div class="form-group">
+      <label for="login">Логин:</label>
+      <input id="login" type="text" class="form-control" :class="$v.form.login.$error ? 'is-invalid' : '' " v-model.trim="form.login">
+      <p v-if="$v.form.login.$dirty && !$v.form.login.required" class="invalid-feedback">Обязательное поле</p>
+      <p v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="invalid-feedback">Больше 3</p>
+    </div>
+    <div class="form-group">
+      <label for="login">Почта:</label>
+      <input id="email" type="email" class="form-control" :class="$v.form.email.$error ? 'is-invalid' : '' " v-model.trim="form.email">
+      <p v-if="$v.form.email.$dirty && !$v.form.email.required" class="invalid-feedback">Обязательное поле</p>
+      <p v-if="$v.form.email.$dirty && !$v.form.email.minLength" class="invalid-feedback">Больше 3</p>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </template>
 
 <script>
-import useVuelidate from '@vuelidate/core'
-import { required, email, minLength, } from '@vuelidate/validators'
-
-
-export function validName(name) {
-  let validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$");
-  if (validNamePattern.test(name)){
-    return true;
-  }
-  return false;
-}
-
+import { validationMixin } from 'vuelidate';
+import { required, email, minLength, } from '@vuelidate/validators';
+// maxLength, numeric
 
 export default {
-
-  setup () {
-    return { v$: useVuelidate() }
-  },
-
+  name: 'contack_us',
   data() {
     return {
       form: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
+        login: '',
+        email: '',        
       }
     }
   },
-
-  validations() {
-    return {
-      form: {
-        firstName: { 
-          required, name_validation: {
-            $validator: validName,
-            $message: 'Invalid Name. Valid name only contain letters, dashes (-) and spaces'
-          } 
-        },
-        lastName: { 
-          required, name_validation: {
-            $validator: validName,
-            $message: 'Invalid Name. Valid name only contain letters, dashes (-) and spaces'
-          } 
-        },
-        email: { required, email },
-        password: { required, min: minLength(6) },
-        confirmPassword: { required }
-      },
+  validations: {
+    form: {
+      login: { required, min: minLength(3) },
+      email: { required, email },
     }
   },
+  methods: {
+    checkForm() {
+      this.$v.form.$touch()
+      if(!this.$v.form.$error) {
+        console.log('Валидация успешна');
+      }
+    }
+  }
+}
+</script> -->
+
+
+<template>
+  <form class="sign-up" @submit.prevent="checkForm">
+    <div class="form-group">
+      <label for="login">Логин:</label>
+      <input
+        id="login"
+        class="form-control"
+        :class="$v.form.login.$error ? 'is-invalid' : ''"
+        v-model.trim="form.login"
+      >
+      <p v-if="$v.form.login.$dirty && !$v.form.login.required" class="invalid-feedback">
+        Обязательное поле
+      </p>
+      <p v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="invalid-feedback">
+        Здесь должно быть больше 5-и символов
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="login">Почта:</label>
+      <input
+        id="email"
+        type="email"
+        class="form-control"
+        :class="$v.form.email.$error ? 'is-invalid' : ''"
+        v-model.trim="form.email"
+      >
+      <p v-if="$v.form.login.$dirty && !$v.form.email.required" class="invalid-feedback">
+        Обязательное поле
+      </p>
+      <p v-if="$v.form.login.$dirty && !$v.form.email.email" class="invalid-feedback">
+        Email неккоректный
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="login">Пароль:</label>
+      <input
+        id="password"
+        type="password"
+        class="form-control"
+        :class="$v.form.password.$error ? 'is-invalid' : ''"
+        v-model.trim="form.password"
+      >
+      <p v-if="$v.form.login.$dirty && !$v.form.password.required" class="invalid-feedback">
+        Обязательное поле
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="country">Страна проживания:</label>
+      <select id="country" class="form-control" v-model="form.country">
+        <option
+         v-for="(country, index) in countries"
+         :value="country.value"
+         :key="index"
+        >
+          {{ country.label }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="themes">Любимые темы:</label>
+      <select id="themes" class="form-control" v-model="form.favoiriteThemes" multiple>
+        <option
+         v-for="(theme, index) in themes"
+         :value="theme.value"
+         :key="index"
+        >
+          {{ theme.label }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="notification" v-model="form.agreeWithSendEmail">
+      <label class="form-check-label" for="notification">Уведомлять меня о новых курсах</label>
+    </div>
+    <div class="flex">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="male" name="exampleRadios" id="male" v-model="form.gendere" >
+        <label class="form-check-label" for="male">
+          Мужчина
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="female" name="exampleRadios" id="female" v-model="form.gendere">
+        <label class="form-check-label" for="female">
+          Женщина
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+  </form>
+</template>
+
+<script>
+import { validationMixin } from 'vuelidate'
+import { required, minLength, email } from 'vuelidate/lib/validators'
+
+export default {
+  mixins: [validationMixin],
+  data() {
+    return {
+      form: {
+        login: '',
+        email: '',
+        password: '',
+        country: 'Russia',
+        favoiriteThemes: ['IT'],
+        agreeWithSendEmail: false,
+        gendere: 'male'
+      },
+      countries: [
+        {
+          label: 'Россия',
+          value: 'Russia'
+        },
+        {
+          label: 'Украина',
+          value: 'Ukraine'
+        },
+        {
+          label: 'США',
+          value: 'USA'
+        }
+      ],
+      themes: [
+         {
+          label: 'Технологии',
+          value: 'IT'
+        },
+        {
+          label: 'Языки',
+          value: 'languages'
+        },
+        {
+          label: 'Математика',
+          value: 'mathematics'
+        }
+      ]
+    }
+  },
+  validations: {
+    form: {
+      login: { required, minLength: minLength(5)},
+      email: { required, email },
+      password: { required },
+    }
+  },
+  methods: {
+    checkForm() {
+      this.$v.form.$touch()
+      if (!this.$v.form.$error) {
+        console.log('Валидация прошла успешно')
+      }
+    }
+  }
 }
 </script>
 
+
 <style>
-  
+  .form-control {
+    width: 400px;
+  }
+  .form-check {
+    margin-right: 10px;
+  }
+  button {
+    margin-top: 15px;
+  }
 </style>
