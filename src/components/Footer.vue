@@ -5,40 +5,128 @@
             <form class="row g-3 text-left">
                 <div class="col-md-3">
                     <label for="validationServer01" class="form-label">First Name *</label>
-                    <input type="text" placeholder="Enter your First name" class="form-control" id="validationServer01" required>
+                    <input 
+                        type="text" 
+                        placeholder="Enter your First name" 
+                        class="form-control" 
+                        id="validationServer01" 
+                        v-model.trim="v$.form.firstname.$model" 
+                        :class="{'is-invalid':!v$.form.firstname.$errors, 'is-valid':!v$.form.firstname.$invalid}" 
+                        required
+                    >
+                    <div class="errors" v-for="(error, index) of v$.form.firstname.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer01" class="form-label">Last name *</label>
-                    <input type="text" placeholder="Enter your Last name" class="form-control" id="validationServer01" required>
+                    <input 
+                        type="text" 
+                        placeholder="Enter your Last name" 
+                        class="form-control" 
+                        id="validationServer01" 
+                        v-model.trim="v$.form.lastname.$model" 
+                        :class="{'is-invalid':!v$.form.lastname.$errors, 'is-valid':!v$.form.lastname.$invalid}" 
+                        required>
+                    <div class="errors" v-for="(error, index) of v$.form.lastname.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer01" class="form-label">Company *</label>
-                    <input type="text" placeholder="Enter your company" class="form-control" id="validationServer01" required>
+                    <input 
+                        type="text" 
+                        placeholder="Enter your company" 
+                        class="form-control" 
+                        id="validationServer01" 
+                        v-model.trim="v$.form.company.$model" 
+                        :class="{'is-invalid':!v$.form.company.$errors, 'is-valid':!v$.form.company.$invalid}" 
+                        required
+                    >
+                    <div class="errors" v-for="(error, index) of v$.form.company.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServerUsername" class="form-label">Email *</label>
                     <div class="input-group has-validation">
-                    <input type="text" class="form-control" id="validationServerUsername" placeholder="Enter Your Email" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="validationServerUsername" 
+                        placeholder="Enter Your Email" 
+                        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" 
+                        v-model.trim="v$.form.email.$model" 
+                        :class="{'is-invalid':!v$.form.email.$errors, 'is-valid':!v$.form.email.$invalid}" 
+                        required
+                    >
+                    </div>
+                    <div class="errors" v-for="(error, index) of v$.form.email.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer01" class="form-label">Job Title *</label>
-                    <input type="text" placeholder="Enter job title" class="form-control" id="validationServer01" required>
+                    <input 
+                        type="text" 
+                        placeholder="Enter job title" 
+                        class="form-control" id="validationServer01" 
+                        v-model.trim="v$.form.job.$model"
+                        :class="{'is-invalid':!v$.form.job.$errors, 'is-valid':!v$.form.job.$invalid}" 
+                        required
+                    >
+                    <div class="errors" v-for="(error, index) of v$.form.job.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer01" class="form-label">Country *</label>
-                    <input type="text" placeholder="Enter Your Country" class="form-control" id="validationServer01" required>
+                    <input 
+                        type="text" 
+                        placeholder="Enter Your Country" 
+                        class="form-control" 
+                        id="validationServer01" 
+                        v-model.trim="v$.form.country.$model" 
+                        :class="{'is-invalid':!v$.form.country.$errors, 'is-valid':!v$.form.country.$invalid}" 
+                        required
+                    >
+                    <div class="errors" v-for="(error, index) of v$.form.country.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer01" class="form-label">State *</label>
-                    <input type="text" placeholder="Enter your State" class="form-control" id="validationServer01" required>
+                    <input 
+                        type="text" 
+                        placeholder="Enter your State" 
+                        class="form-control" 
+                        id="validationServer01" 
+                        v-model.trim="v$.form.state.$model" 
+                        :class="{'is-invalid':!v$.form.state.$errors, 'is-valid':!v$.form.state.$invalid}" 
+                        required
+                    >
+                    <div class="errors" v-for="(error, index) of v$.form.state.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer05" class="form-label">Zip Code *</label>
-                    <input type="text" class="form-control" id="validationServer05" placeholder="Enter Your Zip Code" aria-describedby="validationServer05Feedback" required>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="validationServer05" 
+                        placeholder="Enter Your Zip Code" 
+                        aria-describedby="validationServer05Feedback" 
+                        v-model.trim="v$.form.zipCode.$model" 
+                        :class="{'is-invalid':!v$.form.zipCode.$errors, 'is-valid':!v$.form.zipCode.$invalid}" 
+                        required
+                    >
+                    <div class="errors" v-for="(error, index) of v$.form.zipCode.$errors" :key="index">
+                        <div class="error_msg">{{ error.$message }}</div>
+                    </div>
                 </div>
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit" >Submit</button>
                 </div>
             </form>
         </div>
@@ -49,8 +137,88 @@
 </template>
 
 <script>
+    import useVuelidate from '@vuelidate/core';
+    import { required, email, minLength, maxLength, numeric} from '@vuelidate/validators';
+
+    export function validText(name) {
+        let validNamePattern = new RegExp("^[a-zA-Z]+(?:[-'\\s][a-zA-Z]+)*$");
+        if (validNamePattern.test(name)) {
+            return true;
+        }
+        return false;
+    }
+
     export default {
         name: 'footer_block',
+        setup () {
+            return { v$: useVuelidate() }
+        },
+        data() {
+            return {
+            form: {
+                firstname: '',
+                lastname: '',
+                company: '',
+                email: '',
+                job: '',
+                country: '',
+                state: '',
+                zipCode: '',
+            }
+            }
+        },
+        validations() {
+            return {
+            form: {
+                firstname: { 
+                    required, 
+                    name_validation: {
+                        $validator: validText,
+                        $message: 'Only letters'
+                    },
+                    min: minLength(3),
+                    max: maxLength(20),
+                },
+                lastname: { 
+                    required, 
+                    name_validation: {
+                        $validator: validText,
+                        $message: 'Only letters'
+                    },
+                    min: minLength(3),
+                    max: maxLength(20),
+                },
+                company: {
+                    required, 
+                    min: minLength(3),
+                    max: maxLength(20),
+                },
+                email: { 
+                    required, 
+                    email,
+                },
+                job: {
+                    required, 
+                    min: minLength(3),
+                    max: maxLength(20),
+                },
+                country: {
+                    required, 
+                    min: minLength(3),
+                    max: maxLength(20),
+                },
+                state: {
+                    required,
+                    min: minLength(3),
+                    max: maxLength(20),
+                },
+                zipCode: {
+                    required,
+                    numeric,
+                },
+            },
+            }
+        },
     }
 </script>
 
@@ -82,5 +250,10 @@
 
     h6 {
         font-size: 16px;
+    }
+
+    .error_msg {
+        font-size: 12px;
+        color: red;
     }
 </style>
