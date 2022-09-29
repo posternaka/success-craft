@@ -1,6 +1,6 @@
 <template>
     <div class="navigation">
-        <nav class="navbar fixed-top bg-light">
+        <nav class="navbar bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#home">
                     <img src="../assets/img/logo.svg" alt="Company's logo">
@@ -50,5 +50,18 @@
 
     a {
         color: #000;
+    }
+
+    @media (max-width: 992px) {
+        .navbar-brand {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            padding: 8px 0;
+            font-size: 0.8rem;
+        }
     }
 </style>

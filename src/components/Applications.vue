@@ -2,7 +2,7 @@
     <div id="applications" class="wrapper">
         <div class="container">
             <h3 class="title text-center">Applications</h3>
-            <div class="applications_cards d-flex flex-row">
+            <div class="applications_cards d-flex flex-row justify-content-between">
                 <div class="card d-flex flex-column" v-for="n in 8" :key="n">
                     <img :src="require(`@/assets/img/applications/${n}.png`)" :alt="`App ${n}`">
                     <h5 class="card_title text-center">App {{n}}</h5>
@@ -48,5 +48,20 @@
 
     h5 {
         margin: 0;
+    }
+
+    @media (max-width: 992px) {
+        .title {
+            font-size: 28px;
+            padding: 24px 0 25px 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .applications_cards {
+            column-gap: 10px;
+            row-gap: 45px;
+            flex-wrap: wrap;
+        }
     }
 </style>

@@ -24,7 +24,9 @@
 
 <style scoped>
     .wrapper {
-        background: url('@/assets/img/about-us/background-about-us.png');
+        background-image: url('@/assets/img/about-us/background-about-us.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
         color: #000;
         text-align: left;
         padding: 90px 0;
@@ -47,5 +49,41 @@
 
     .about-us a:first-of-type {
         margin-right: 25px;
+    }
+
+    @media (max-width: 1200px) {
+        .about-us a:first-of-type {
+            margin-bottom: 15px;
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: 992px) {
+        img {
+            width: 50%;
+            height: 70%;
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        img {
+            width: 40%;
+            height: 50%;
+            margin: auto;
+        }
     }
 </style>

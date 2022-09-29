@@ -1,5 +1,5 @@
 <template>
-    <div id="#home" class="wrapper">
+    <div id="home" class="wrapper">
         <div class="container d-flex flex-column justify-content-center align-items-center">
             <h1>Welcome to Test Page</h1>
             <p>Front-end developer</p>
@@ -32,4 +32,28 @@
         font-size: 2.3rem;
     }
 
+    @media (max-width: 992px) {
+        h1 {
+            font-size: 4.0rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 3.0rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 530px) {
+        h1 {
+            font-size: 2.0rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
 </style>
