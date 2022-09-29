@@ -34,8 +34,13 @@
 </script>
 
 <style scoped>
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .navigation {
         max-height: 80px;
+        font-family: 'Roboto', sans-serif;
     }
 
     nav {

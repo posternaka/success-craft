@@ -28,6 +28,7 @@
     .title {
         font-size: 28px;
         padding: 44px 0 45px 0;
+        font-weight: bold;
     }
 
     .applications_cards {

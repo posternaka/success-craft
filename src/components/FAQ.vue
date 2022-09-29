@@ -34,10 +34,16 @@
         text-align: left;
     }
 
+    
     .faq_info {
         padding: 26px 20px;
     }
-
+    
+    .faq_title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
     .faq_text {
         color: #808080;
     }

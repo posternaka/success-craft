@@ -3,28 +3,21 @@
         <div class="container">
             <h3 class="frameworks_title">Frameworks</h3>
             <div class="cards d-flex flex-row" v-for="framework in frameworks" :key="framework.id">
-                <div class="about-us">
-                    <h3 class="about-us_title">{{framework.title}}</h3>
-                    <p class="about-us_text">{{framework.text}}</p>
-                    <a class="btn btn-primary" href="#" role="button">Read more</a>
-                    <a class="btn btn-outline-primary" href="#" role="button">Contact us</a>
+                <div class="about-us d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="about-us_title">{{framework.title}}</h3>
+                        <p class="about-us_text">{{framework.text}}</p>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary" href="#" role="button">Read more</a>
+                        <a class="btn btn-outline-primary" href="#" role="button">Webinar</a>
+                    </div>
                 </div>
-                <div>
-                    <img :src="require(`@/assets/img/frameworks/${framework.picture}.png`)" :alt="`${framework.title}`">
-                </div>  
+                <img class="img-responsive" :src="require(`@/assets/img/frameworks/${framework.picture}.png`)" :alt="`${framework.title}`">
             </div>
         </div>
     </div>
 </template>
-
-<!-- <div class="card mb-3">
-                <img src="../assets/img/applications/1.png" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Заголовок карточки</h5>
-                    <p class="card-text">Это более широкая карточка с вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p>
-                    <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
-                </div>
-            </div> -->
 
 <script>
     export default {
@@ -66,6 +59,7 @@
         font-size: 28px;
         text-align: center;
         padding: 44px 0 45px 0;
+        font-weight: bold;
     }
 
     .cards {
@@ -73,15 +67,25 @@
         gap: 62px;
         border-radius: 15px;
         margin-bottom: 45px;
+        overflow: hidden;
+    }
+
+    .cards:nth-child(2n){
+        flex-direction: row-reverse !important;
     }
 
     .about-us {
         padding: 25px 11px;
     }
 
+    .about-us a:first-of-type {
+        margin-right: 25px;
+    }
+
     .about-us_title {
         margin-bottom: 16px;
-        font-size: 28px;
+        font-size: 24px;
+        font-weight: bold;
     }
 
     .about-us_text {
