@@ -2,8 +2,8 @@
     <div class="wrapper">
         <div class="container d-flex flex-row">
             <div class="about-us">
-                <h3 class="about-us_title">About us</h3>
-                <p class="about-us_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.</p>
+                <h3 class="title">About us</h3>
+                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.</p>
 
                 <a class="btn btn-primary" href="#" role="button">Read more</a>
                 <a class="btn btn-outline-primary" href="#" role="button">Contact us</a>
@@ -31,12 +31,12 @@
         gap: 40px;
     }
 
-    .about-us_title {
+    .title {
         margin-bottom: 16px;
         font-size: 28px;
     }
 
-    .about-us_text {
+    .text {
         margin-bottom: 28px;
         color: #808080;
     }

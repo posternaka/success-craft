@@ -7,6 +7,7 @@
   <Frameworks />
   <Faq />
   <Applications />
+  <ContactUs />
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import AboutUs from '@/components/AboutUs.vue';
 import Frameworks from '@/components/Frameworks.vue';
 import Faq from '@/components/Faq.vue';
 import Applications from '@/components/Applications.vue';
+import ContactUs from './components/ContactUs.vue';
 
 export default {
   name: 'App',
@@ -28,7 +30,8 @@ export default {
     Frameworks,
     Faq,
     Applications,
-  },
+    ContactUs,
+},
 }
 </script>
 
@@ -128,8 +131,8 @@ select {
   font-family: GothicA1, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #fff;
+  /* text-align: center; */
+  color: #3D3D3D;
 }
 
 .container {

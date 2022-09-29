@@ -1,11 +1,11 @@
 <template>
     <div class="wrapper">
         <div class="container">
-            <h3 class="title">Applications</h3>
+            <h3 class="title text-center">Applications</h3>
             <div class="applications_cards d-flex flex-row">
                 <div class="card d-flex flex-column" v-for="n in 8" :key="n">
                     <img :src="require(`@/assets/img/applications/${n}.png`)" :alt="`App ${n}`">
-                    <h5 class="card_title">App {{n}}</h5>
+                    <h5 class="card_title text-center">App {{n}}</h5>
                 </div>
             </div>
         </div>
@@ -37,6 +37,7 @@
     }
 
     .card {
+        cursor: pointer;
     }
 
     .card_title {
