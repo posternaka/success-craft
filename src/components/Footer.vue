@@ -202,6 +202,7 @@
                     required, 
                 },
                 email: { 
+                    required, 
                     email,
                 },
                 job: {
@@ -214,6 +215,7 @@
                     required,
                 },
                 zipCode: {
+                    required, 
                     numeric,
                 },
             },
