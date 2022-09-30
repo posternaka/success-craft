@@ -175,6 +175,8 @@
         },
         data() {
             return {
+                currentTime: 3,
+                timer: null,
                 form: {
                     firstname: '',
                     lastname: '',
@@ -221,16 +223,27 @@
             checkForm() {
                 this.v$.form.$touch()
                 if (!this.v$.form.$error) {
+                    this.startTimer()
                     return this.showModal()
                 }
 
                 return false
             },
-
             showModal() {
-                this.$refs.modal.show = true
-            }
-        }
+                this.$refs.modal.show = true;
+            },
+            startTimer() {
+                this.timer = setInterval(() => {
+                    if (this.currentTime === 0) {
+                        this.$refs.modal.show = false;
+                        this.currentTime = 3;
+                        clearInterval(this.timer);
+                    } else {
+                        --this.currentTime;
+                    }             
+                }, 1000)
+            },
+        },
     }
 </script>
 

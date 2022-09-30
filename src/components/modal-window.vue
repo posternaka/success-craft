@@ -12,14 +12,14 @@
         name: "ModalWindow",
         data() {
             return {
-                show: false
+                show: false,
             }
         },
         methods: {
             closeModal() {
                 this.show = false
-            }
-        }
+            },
+        },
     }
 </script>
  
